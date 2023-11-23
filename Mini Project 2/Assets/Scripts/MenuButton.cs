@@ -7,6 +7,8 @@ public class MenuButton : MonoBehaviour, IPointerEnterHandler, IPointerExitHandl
 {
     public Sprite backgroundImage;
     public TextMeshProUGUI text;
+    public TMP_FontAsset ultraLight;
+    public TMP_FontAsset medium;
 
     public void OnPointerClick(PointerEventData eventData)
     {
@@ -17,6 +19,7 @@ public class MenuButton : MonoBehaviour, IPointerEnterHandler, IPointerExitHandl
     {
         GetComponent<Image>().sprite = backgroundImage;
         text.color = Color.white;
+        text.font = medium;
     }
 
     void IPointerExitHandler.OnPointerExit(PointerEventData eventData)
@@ -30,7 +33,8 @@ public class MenuButton : MonoBehaviour, IPointerEnterHandler, IPointerExitHandl
             case "Start": text.color = Color.black; break;
             case "Credits": text.color = new Color(17.0f/255.0f, 112.0f/255.0f, 190.0f/255.0f); break;
             case "Quit": text.color = new Color(178.0f/255.0f, 33.0f/255.0f, 33.0f/255.0f); break;
-            default:  text.color = Color.black; break;
+            default: text.color = Color.black; break;
         }
+        text.font = ultraLight;
     }
 }
