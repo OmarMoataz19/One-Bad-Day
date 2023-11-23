@@ -1,0 +1,33 @@
+using System.Collections;
+using System.Collections.Generic;
+using UnityEngine;
+using UnityEngine.Playables;
+using UnityEngine.SceneManagement;
+
+public class SceneSwitcher : MonoBehaviour
+{
+
+    public PlayableDirector currentTimeline;
+    public string nextSceneName;
+
+    // Start is called before the first frame update
+    void Start()
+    {
+        
+    }
+
+    // Update is called once per frame
+    void Update()
+    {
+        
+    }
+
+    public void OnTimelineEnd()
+    {
+        if (currentTimeline.time >= currentTimeline.duration)
+        {
+            SceneManager.LoadScene(nextSceneName);
+        }
+    }
+
+}

@@ -10,7 +10,7 @@ public class MainMenu : MonoBehaviour
     public GameObject creditsPage;
 
     public void StartGame() {
-        SceneManager.LoadScene("SampleScene");
+        SceneManager.LoadScene("RadwanScene");
     }
 
     public void Credits() {
