@@ -24,10 +24,7 @@ public class SceneSwitcher : MonoBehaviour
 
     public void OnTimelineEnd()
     {
-        if (currentTimeline.time >= currentTimeline.duration)
-        {
-            SceneManager.LoadScene(nextSceneName);
-        }
+        SceneManager.LoadScene(nextSceneName);
     }
 
 }
