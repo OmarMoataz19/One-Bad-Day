@@ -10,6 +10,7 @@ public class TimelinesSwitcherOmar : MonoBehaviour
 
     public PlayableDirector timeline1;
     public PlayableDirector timeline2;
+    public PlayableDirector timeline3;
     public GameObject canvas;
 
     // Start is called before the first frame update
@@ -17,6 +18,7 @@ public class TimelinesSwitcherOmar : MonoBehaviour
     {
         timeline1.Stop();
         timeline2.Stop();
+        timeline3.Stop();
         PlayTimeline(timeline1);
     }
 
@@ -34,6 +36,9 @@ public class TimelinesSwitcherOmar : MonoBehaviour
         if (timeline2.state == PlayState.Playing)
             timeline2.Stop();
 
+        if (timeline3.state == PlayState.Playing)
+            timeline3.Stop();
+
         timeline.Play();
     }
 
@@ -45,7 +50,7 @@ public class TimelinesSwitcherOmar : MonoBehaviour
 
     public void Kill()
     {
-        PlayTimeline(timeline2);
+        PlayTimeline(timeline3);
         canvas.SetActive(false);
     }
 
