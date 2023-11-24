@@ -3,6 +3,7 @@ using UnityEngine.Playables;
 
 public class SwitchToSuicide : MonoBehaviour
 {
+    public PlayableDirector timeline;
     public PlayableDirector timeline1;
     public PlayableDirector timeline2;
     public GameObject canvas;
@@ -31,12 +32,14 @@ public class SwitchToSuicide : MonoBehaviour
 
     public void GiveUp()
     {
+        timeline.Stop();
         PlayTimeline(timeline1);
         canvas.SetActive(false);
     }
 
     public void Suicide()
     {
+        timeline.Stop();
         PlayTimeline(timeline2);
         canvas.SetActive(false);
     }
